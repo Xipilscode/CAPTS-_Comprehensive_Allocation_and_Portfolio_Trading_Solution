@@ -2,7 +2,7 @@
 
 # Project Title
 
-This project aims to provide a comprehensive and integrated solution for financial analysis and algorithmic trading of three asset classes (crypto, commodities, stocks), consisting of the following sub-projects:
+This project aims to provide a comprehensive and integrated solution for portfolio allocation, financial analysis and algorithmic trading of three asset classes (crypto, commodities, stocks), consisting of the following sub-projects:
 
 ## Sub-Project 1: Capital Allocation Optimization
 The objective of this project is to gather, clean, and analyze data for crypto, commodities, and stocks, leveraging financial APIs such as CoinMarketCap and CryptoCompare with Pandas. The data will be structured and saved in JSON format, and analyzed and visualized with Numpy and PyViz. The analyzed data will be stored in SQL for future use.
