@@ -4,16 +4,13 @@
 
 This project aims to provide a comprehensive and integrated solution for financial analysis and algorithmic trading of three asset classes (crypto, commodities, stocks), consisting of the following sub-projects:
 
-## Sub-Project 1:
-## Capital Allocation Optimization
+## Sub-Project 1: Capital Allocation Optimization
 The objective of this project is to gather, clean, and analyze data for crypto, commodities, and stocks, leveraging financial APIs such as CoinMarketCap and CryptoCompare with Pandas. The data will be structured and saved in JSON format, and analyzed and visualized with Numpy and PyViz. The analyzed data will be stored in SQL for future use.
 
-## Sub-Project 2:
-## Machine Learning for Portfolio Optimization
+## Sub-Project 2: Machine Learning for Portfolio Optimization
 In this project, machine learning algorithms will be applied to analyze and optimize the portfolio. Techniques such as linear regression, decision trees, and clustering will be used to identify patterns and make predictions about future price movements. Financial metrics, such as Sharpe ratio and Sortino ratio, will also be employed to evaluate and optimize the portfolio.
 
-## Sub-Project 3: 
-## GRID Bot for Backtesting and Trading
+## Sub-Project 3: GRID Bot for Backtesting and Trading
 In this project, a GRID bot will be developed for backtesting and bug fixing using a paper trading platform. The bot will use the data collected in the first project and insights from the second project to make trades based on various financial strategies, including mean reversion and trend following. The bot's performance will be optimized through algorithmic trading strategies.
 
 
