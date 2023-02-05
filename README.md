@@ -1,4 +1,4 @@
-# CAPTS-Comprehensive_Allocation_and_Portfolio_Trading_Solution
+# CAPTS: Comprehensive_Allocation_and_Portfolio_Trading_Solution
 
 # Project Title
 
