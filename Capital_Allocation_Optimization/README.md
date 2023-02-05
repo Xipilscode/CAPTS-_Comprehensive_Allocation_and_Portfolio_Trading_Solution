@@ -44,7 +44,7 @@ conda pip install pandas
 ---
 
 ## Contributors
-Alexander Likhachev, Alphonso Logan, Cary Gutknecht, Markeis Reed, Julio Rod 
+Alexander Likhachev, Alphonso Logan, Cary Gutknecht, Markeis Reed, Julio Rodriguez 
 
 
 
