@@ -47,7 +47,9 @@ conda pip install jupyterlab
 conda pip install pandas
 ```
 4. To install yfinance:
+```python
 conda pip install yfinance
+
 ```
 5.Open **CAPTS-Comprehensive_Allocation_and_Portfolio_Trading_Solution** file in Jupyter notebook.  
   
