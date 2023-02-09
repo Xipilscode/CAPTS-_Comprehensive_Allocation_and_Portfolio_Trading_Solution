@@ -1,7 +1,5 @@
 # CAPTS:_Comprehensive_Allocation_and_Portfolio_Trading_Solution
 
-# Project Title
-
 This project aims to provide a comprehensive and integrated solution for portfolio allocation, financial analysis and algorithmic trading of three asset classes (crypto, commodities, stocks), consisting of the following sub-projects:
 
 ## Sub-Project 1: Capital Allocation Optimization
