@@ -33,7 +33,7 @@ conda pip install jupyterlab
 ```python
 conda pip install pandas
 ```
-4.Open **capital_allocation_optimization.ipynb** file in Jupyter notebook.  
+4.Open **capital_allocation_optimization** file in Jupyter notebook.  
   
 ---
 
@@ -44,7 +44,7 @@ conda pip install pandas
 ---
 
 ## Contributors
-Alexander Likhachev, Alphonso Logan, Cary Gutknecht, Markeis Reed, Julio Rodriguez 
+Alexander Likhachev, Alphonso Logan, Cary Gutknecht, Markeis Reed, Julio Rod 
 
 
 
