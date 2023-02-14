@@ -25,7 +25,7 @@ def navigation():
 def home():
     with st.spinner("Loading Home page..."):
          # Heder image 
-        img_header = Image.open("https://github.com/Xipilscode/CAPTS-Comprehensive_Allocation_and_Portfolio_Trading_Solution/blob/Alex/Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_1.jpeg")
+        img_header = Image.open("data/images/main_page_1.jpeg")
         st.image(img_header, width=None)
 
         # Header name of the project w/description
