@@ -94,7 +94,7 @@ def home():
 def step_1():
     with st.spinner("Loading Home page..."):
          # Heder image 
-        img_header = Image.open("data/images/main_page_2.jpeg")
+        img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_2.jpeg')
         st.image(img_header, width=None)
 
         # Header name of Step 1  w/description
