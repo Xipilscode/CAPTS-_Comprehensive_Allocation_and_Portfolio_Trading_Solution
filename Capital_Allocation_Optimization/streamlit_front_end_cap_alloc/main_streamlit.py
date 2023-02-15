@@ -100,7 +100,7 @@ def step_1():
         # Header name of Step 1  w/description
         st.markdown(
         """
-        <h3 style="text-align: left;">
+        <h3 style="text-align: center;">
         Step 1: Capital Allocation Optimization</h3>
         
         <div style="text-align:justify;">
@@ -168,16 +168,38 @@ def show_df(start, end):
 
 # Step 2 page
 def step_2():
-     # Header image 
+     # Header text
+     st.markdown(
+        """
+        <h3 style="text-align: center;">
+        Step 2: Machine Learning for Portfolio Optimization</h3>
+        <br/>
+        <br/>
+        Coming soon!
+     """,
+        unsafe_allow_html=True,
+        )
+     
+    # Header image
     img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/page_2.png')
     st.image(img_header, width=None)
-    st.write("Step 2: Machine Learning for Portfolio Optimization")
-    st.write("Coming soon!")
+  
 
 # Step 3 page
 def  step_3():
-    st.write("Step 3: GRID Bot for Backtesting and Trading")
-    st.write("Coming soon!")
+     # Header text
+     st.markdown(
+        """
+        <h3 style="text-align: center;">
+        Step 3: GRID Bot for Backtesting and Tradingn</h3>
+        <br/>
+        <br/>
+        Coming soon!
+        """,
+        unsafe_allow_html=True,
+        )
+  
+    # Header image
     img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/bot_page.jpeg')
     st.image(img_header, use_column_width=True)
 
