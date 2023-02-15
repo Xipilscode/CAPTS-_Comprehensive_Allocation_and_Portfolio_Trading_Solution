@@ -24,7 +24,7 @@ def navigation():
 # Define home page container 
 def home():
     with st.spinner("Loading Home page..."):
-         # Heder image 
+         # Header image 
         img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_1.jpeg')
         st.image(img_header, width=None)
 
@@ -93,7 +93,7 @@ def home():
 # Step 1 page
 def step_1():
     with st.spinner("Loading Home page..."):
-         # Heder image 
+         # Header image 
         img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_2.jpeg')
         st.image(img_header, width=None)
 
@@ -168,6 +168,9 @@ def show_df(start, end):
 
 # Step 2 page
 def step_2():
+     # Header image 
+    img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_2.jpeg')
+    st.image(img_header, width=None)
     st.write("Step 2: Machine Learning for Portfolio Optimization")
     st.write("Coming soon!")
 
