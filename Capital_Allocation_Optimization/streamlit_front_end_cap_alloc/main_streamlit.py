@@ -169,13 +169,15 @@ def show_df(start, end):
 # Step 2 page
 def step_2():
      # Header image 
-    img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_2.jpeg')
+    img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/page_2.png')
     st.image(img_header, width=None)
     st.write("Step 2: Machine Learning for Portfolio Optimization")
     st.write("Coming soon!")
 
 # Step 3 page
 def  step_3():
+    img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/bot_page.jpeg')
+    st.image(img_header, width=None)
     st.write("Step 3: GRID Bot for Backtesting and Trading")
     st.write("Coming soon!")
     st.markdown(
