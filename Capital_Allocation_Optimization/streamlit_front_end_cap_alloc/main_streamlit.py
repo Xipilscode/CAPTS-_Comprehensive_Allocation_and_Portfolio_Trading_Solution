@@ -176,10 +176,11 @@ def step_2():
 
 # Step 3 page
 def  step_3():
-    img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/bot_page.jpeg')
-    st.image(img_header, width=None)
     st.write("Step 3: GRID Bot for Backtesting and Trading")
     st.write("Coming soon!")
+    img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/bot_page.jpeg')
+    st.image(img_header, use_column_width=True)
+
     st.markdown(
     """
     <div style="text-align:justify;">
