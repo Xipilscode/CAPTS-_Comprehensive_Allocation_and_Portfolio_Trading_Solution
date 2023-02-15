@@ -92,7 +92,7 @@ def home():
 
 # Step 1 page
 def step_1():
-    with st.spinner("Loading Home page..."):
+    with st.spinner("Capital Allocation page..."):
          # Header image 
         img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_2.jpeg')
         st.image(img_header, width=None)
@@ -168,8 +168,9 @@ def show_df(start, end):
 
 # Step 2 page
 def step_2():
-     # Header text
-     st.markdown(
+    with st.spinner("Portfolio Optimization page..."):
+        # Header text
+        st.markdown(
         """
         <h3 style="text-align: center;">
         Step 2: Machine Learning for Portfolio Optimization</h3>
@@ -180,15 +181,16 @@ def step_2():
         unsafe_allow_html=True,
         )
      
-    # Header image
-    img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/page_2.png')
-    st.image(img_header, width=None)
-  
+        # Header image
+        img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/page_2.png')
+        st.image(img_header, width=None)
+    
 
 # Step 3 page
 def  step_3():
-     # Header text
-     st.markdown(
+     with st.spinner("GRID Bot page..."):
+        # Header text
+        st.markdown(
         """
         <h3 style="text-align: center;">
         Step 3: GRID Bot for Backtesting and Tradingn</h3>
@@ -199,30 +201,30 @@ def  step_3():
         unsafe_allow_html=True,
         )
   
-    # Header image
-    img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/bot_page.jpeg')
-    st.image(img_header, use_column_width=True)
+        # Header image
+        img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/bot_page.jpeg')
+        st.image(img_header, use_column_width=True)
 
-    st.markdown(
-    """
-    <div style="text-align:justify;">
-    Ah, the trading Grid bot, a financial whiz that puts the "grid" in "gridlock".
-    <br/>
-    Let us break it down for you:
-    <br/>
-    At its core, a trading Grid bot is a sophisticated algorithm that buys and sells assets automatically according to a predetermined set of rules. The key feature of a Grid bot is that it uses a series of up and down buy and sell orders to capture gains in a sideways market.
-    <br/>
-    How does it work, you'll ask? Imagine it like a crossword puzzle. The bot fills in the boxes of the puzzle with buy orders, each one slightly lower than the last. Then it fills in the corresponding boxes with sell orders, each one slightly higher than the last. As the market moves sideways, the bot can capture gains by trading within this grid of orders.
-    <br/>
-    But like any good crossword puzzler, the Grid bot has a few tricks up its sleeve. It can adjust the size and spacing of its grid as the market moves, ensuring it can still capture profits even if the market starts to move more rapidly. And it can also be programmed to automatically reinvest profits back into the grid, compounding gains over time.
-    <br/>
-    Of course, like any investment strategy, there are risks involved. If the market breaks out of the grid, the bot may suffer losses. But for those willing to take the risk, a Grid bot can be a powerful tool in their trading arsenal.
-    <br/>
-    So there you have it - the trading Grid bot, a financial strategy that puts the "smart" in "smart investing".
-    
-    """,
-        unsafe_allow_html=True,
-    )
+        st.markdown(
+        """
+        <div style="text-align:justify;">
+        Ah, the trading Grid bot, a financial whiz that puts the "grid" in "gridlock".
+        <br/>
+        Let us break it down for you:
+        <br/>
+        At its core, a trading Grid bot is a sophisticated algorithm that buys and sells assets automatically according to a predetermined set of rules. The key feature of a Grid bot is that it uses a series of up and down buy and sell orders to capture gains in a sideways market.
+        <br/>
+        How does it work, you'll ask? Imagine it like a crossword puzzle. The bot fills in the boxes of the puzzle with buy orders, each one slightly lower than the last. Then it fills in the corresponding boxes with sell orders, each one slightly higher than the last. As the market moves sideways, the bot can capture gains by trading within this grid of orders.
+        <br/>
+        But like any good crossword puzzler, the Grid bot has a few tricks up its sleeve. It can adjust the size and spacing of its grid as the market moves, ensuring it can still capture profits even if the market starts to move more rapidly. And it can also be programmed to automatically reinvest profits back into the grid, compounding gains over time.
+        <br/>
+        Of course, like any investment strategy, there are risks involved. If the market breaks out of the grid, the bot may suffer losses. But for those willing to take the risk, a Grid bot can be a powerful tool in their trading arsenal.
+        <br/>
+        So there you have it - the trading Grid bot, a financial strategy that puts the "smart" in "smart investing".
+        
+        """,
+            unsafe_allow_html=True,
+        )
 
 # Main function to run the app
 def main():
