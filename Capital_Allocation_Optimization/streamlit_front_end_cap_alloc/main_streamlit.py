@@ -176,7 +176,7 @@ def step_2():
         <br/>
         <br/>
         Coming soon!
-     """,
+        """,
         unsafe_allow_html=True,
         )
      
