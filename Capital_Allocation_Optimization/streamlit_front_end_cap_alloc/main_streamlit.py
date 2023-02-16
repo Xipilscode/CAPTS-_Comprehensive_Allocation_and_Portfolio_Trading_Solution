@@ -170,22 +170,22 @@ def show_df(start, end):
 
 
 
-# Load Crypto data frame 
-st.write("Crypto datat Frame:")       
-st.dataframe()
+# # Load Crypto data frame 
+# st.write("Crypto datat Frame:")       
+# st.dataframe()
 
-# Load Stocks data frame  
-st.write("Stocks datat Frame:")       
-st.dataframe()
+# # Load Stocks data frame  
+# st.write("Stocks datat Frame:")       
+# st.dataframe()
 
-# Load Stocks data frame  
-st.write("Commodities datat Frame:")       
-st.dataframe(commodities_df)
+# # Load Stocks data frame  
+# st.write("Commodities datat Frame:")       
+# st.dataframe(commodities_df)
 
 
-# Display scattre plot
-st.write("Scattre plot for crypto")   
-st.pyplot()
+# # Display scattre plot
+# st.write("Scattre plot for crypto")   
+# st.pyplot()
 
 
 
