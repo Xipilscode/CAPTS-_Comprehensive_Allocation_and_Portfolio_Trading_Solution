@@ -2,6 +2,8 @@
 import streamlit as st
 from PIL import Image
 import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # create the navigation menu
 def navigation():
@@ -147,10 +149,49 @@ def step_1():
         # Prompt user to choose number of simulations
         num_of_portfolios = st.slider("Choose number of portfolios simulated:", min_value=500, max_value=5000, step=500)
 
+# Load Crypto scatter plot 
+st.write("Scatter plot for crypto:")       
+st.pyplot()
+
+# Load Stocks scatter plot 
+st.write("Scatter plot for stocks:")       
+st.pyplot()
+
+# Load Stocks scatter plot 
+st.write("Scatter plot for commodities:")       
+st.pyplot()
+
+
+
 # create a function to show the data frame for the selected period
 def show_df(start, end):
     filtered_df = df[start:end]
     return st.dataframe(filtered_df)
+
+
+
+# Load Crypto data frame 
+st.write("Crypto datat Frame:")       
+st.dataframe()
+
+# Load Stocks data frame  
+st.write("Stocks datat Frame:")       
+st.dataframe()
+
+# Load Stocks data frame  
+st.write("Commodities datat Frame:")       
+st.dataframe(commodities_df)
+
+
+# Display scattre plot
+st.write("Scattre plot for crypto")   
+st.pyplot()
+
+
+
+
+
+
 
 # Step 2 page
 def step_2():
