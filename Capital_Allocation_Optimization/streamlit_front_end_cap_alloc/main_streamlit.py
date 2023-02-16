@@ -149,17 +149,17 @@ def step_1():
         # Prompt user to choose number of simulations
         num_of_portfolios = st.slider("Choose number of portfolios simulated:", min_value=500, max_value=5000, step=500)
 
-# Load Crypto scatter plot 
-st.write("Scatter plot for crypto:")       
-st.pyplot()
+# # Load Crypto scatter plot 
+# st.write("Scatter plot for crypto:")       
+# st.pyplot()
 
-# Load Stocks scatter plot 
-st.write("Scatter plot for stocks:")       
-st.pyplot()
+# # Load Stocks scatter plot 
+# st.write("Scatter plot for stocks:")       
+# st.pyplot()
 
-# Load Stocks scatter plot 
-st.write("Scatter plot for commodities:")       
-st.pyplot()
+# # Load Stocks scatter plot 
+# st.write("Scatter plot for commodities:")       
+# st.pyplot()
 
 
 
