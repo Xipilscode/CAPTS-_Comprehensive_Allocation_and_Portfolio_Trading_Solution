@@ -1,4 +1,4 @@
 Pillow==9.4.0
 streamlit==1.18.1
 
-matplotlib==<version>
+matplotlib==3.5.2
