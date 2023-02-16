@@ -15,12 +15,6 @@ def navigation():
     elif page == "Step 3 : GRID Bot":
         step_3()
 
-# # Create containers
-# st.container(home)
-# st.container(step_1)
-# st.container(step_2)
-# st.container(step_3)
-
 # Define home page container 
 def home():
     with st.spinner("Loading Home page..."):
@@ -92,7 +86,7 @@ def home():
 
 # Step 1 page
 def step_1():
-    with st.spinner("Capital Allocation page..."):
+    with st.spinner("Loading capital Allocation page..."):
          # Header image 
         img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_2.jpeg')
         st.image(img_header, width=None)
@@ -120,14 +114,14 @@ def step_1():
         comodities = st.multiselect("Choose comodities:", options=['GC=F', 'SI=F', 'CL=F', 'HG=F', 'LBS=F', 'ZS=F', 'GF=F', 'KE=F', 'CT=F', 'ZR=F'])
    
         # Prompt user to choose time period 
-        st.write("Please choose the analysis period:" 
-                 "Note that you can choose the period only begining forn Jan 1st 2019")
+        st.write("Choose the analysis period:\n"
+        "Note that you can only choose a period starting from Jan 1st, 2020!")
 
         # Get the current date
         today = datetime.datetime.now().date()
 
         # Set the earliest allowed start date to January 1st, 2019
-        earliest_start_date = datetime.date(2019, 1, 1)
+        earliest_start_date = datetime.date(2020, 1, 1)
 
         # Get the user selected start and end dates
         selected_start_date = st.date_input("Select the start date", earliest_start_date)
@@ -150,16 +144,8 @@ def step_1():
         st.write("Selected start date:", selected_start_date)
         st.write("Selected end date:", selected_end_date)
        
-       
-        # st.dadframe(data.pct_change,width=500, height=500)
-        # start_date = st.date_input("Start date", min_date, max_date, default_start)
-        # end_date = st.date_input("End date", min_date, max_date, default_end)
-        # if start_date and end_date:
-        #     show_df(start_date, end_date)
-
-
         # Prompt user to choose number of simulations
-        num_of_simulations = st.slider("Please choose number of simulations:", min_value=5000, max_value=10000, step=1000)
+        num_of_portfolios = st.slider("Choose number of portfolios simulated:", min_value=500, max_value=5000, step=500)
 
 # create a function to show the data frame for the selected period
 def show_df(start, end):
@@ -168,7 +154,7 @@ def show_df(start, end):
 
 # Step 2 page
 def step_2():
-    with st.spinner("Portfolio Optimization page..."):
+    with st.spinner("Loading portfolio Optimization page..."):
         # Header text
         st.markdown(
         """
@@ -176,7 +162,7 @@ def step_2():
         Step 2: Machine Learning for Portfolio Optimization</h3>
         <br/>
         <br/>
-        Coming soon!
+        Coming soon before the next bull market!
         """,
         unsafe_allow_html=True,
         )
@@ -188,7 +174,7 @@ def step_2():
 
 # Step 3 page
 def  step_3():
-     with st.spinner("GRID Bot page..."):
+     with st.spinner("Loading GRID Bot page..."):
         # Header text
         st.markdown(
         """
@@ -230,19 +216,7 @@ def  step_3():
 def main():
     navigation()
     
-    # st.set_page_config(page_title="Data Analysis", page_icon=":chart_with_upwards_trend:", layout="wide")
-    # st.title("Data Analysis App")
-    # menu = ["Home", "Step 1", "Step 2", "Step 3"]
-    # choice = st.sidebar.selectbox("Select a page", menu)
-    # if choice == "Home":
-    #     home()
-    # elif page == "Step 1":
-    #     step_1()
-    # elif page == "Step 2":
-    #     step_2()
-    # elif page == "Step 3":
-    #     step_3()
-# run the app
+# Run the app
 if __name__ == "__main__":
     main()
 
