@@ -63,7 +63,7 @@ conda pip install streamlit
 
 [The application is deployed as a web page on streamlit:](https://capital-allocation-optimizationstreamlit-front-end-ca-ofp0v6.streamlit.app/)
 
-Here are the screenshots of the pages:
+Here are screenshots of the web app's pages:
 
 ![Home page:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/images/Home_page_shot.png)
   
