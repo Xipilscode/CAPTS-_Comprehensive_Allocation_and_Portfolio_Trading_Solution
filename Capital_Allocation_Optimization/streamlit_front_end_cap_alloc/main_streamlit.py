@@ -157,7 +157,7 @@ def show_df(start, end):
 # Load Crypto scatter plot 
 def show_crypto_scat_polt():
     st.write("Scatter plot for crypto:")       
-        st.pyplot()
+    st.pyplot()
 
 # Load Stocks scatter plot 
 def show_stocks_scat_polt(): 
