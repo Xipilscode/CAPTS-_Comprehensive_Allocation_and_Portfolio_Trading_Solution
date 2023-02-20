@@ -66,16 +66,16 @@ conda pip install streamlit
 
 Here are the screenshots of the pages:
 
-![<Home page:>](<Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/Home_page_shot.png>)
+![Home page:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/Home_page_shot.png)
   
 
 Capital Allocation Optimization:
-![<Capital Allocation Optimization:>](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/capital_alloc_shot.png)
+![Capital Allocation Optimization:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/capital_alloc_shot.png)
 
 
-G
-![<GRID Bot for Backtesting and Trading:>](![Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/Grid_bot_shot.png](streamlit_front_end_cap_alloc/data/images/Grid_bot_shot.png)
-)
+
+![GRID Bot for Backtesting and Trading:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/Grid_bot_shot.png)
+
 ---
 
 ## Instructions
