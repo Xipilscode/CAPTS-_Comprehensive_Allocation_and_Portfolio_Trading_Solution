@@ -88,7 +88,8 @@ def home():
 
 # Step 1 page
 def step_1():
-    with st.spinner("Loading capital Allocation page..."):
+    with 
+        st.spinner("Loading capital Allocation page..."):
          # Header image 
         img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_2.jpeg')
         st.image(img_header, width=None)
@@ -113,7 +114,7 @@ def step_1():
         # Prompt user to choose assets in asset classes 
         crypto = st.multiselect("Choose cryptocurencies:", options=['BTC-USD', 'ETH-USD', 'DOGE-USD', 'MATIC-USD', 'AVAX-USD', 'SOL-USD', 'TRX-USD', 'ATOM-USD', 'UNI7083-USD', 'LINK-USD'])
         stocks = st.multiselect("Choose stocks:", options=['AMZN', 'AAPL', 'TSLA', 'GOOGL', 'NVDA', 'MSFT', 'TSM', 'META','XOM', 'LAC'])
-        comodities = st.multiselect("Choose comodities:", options=['GC=F', 'SI=F', 'CL=F', 'HG=F', 'LBS=F', 'ZS=F', 'GF=F', 'KE=F', 'CT=F', 'ZR=F'])
+        comodities = st.multiselect("Choose commodities:", options=['GC=F', 'SI=F', 'CL=F', 'HG=F', 'LBS=F', 'ZS=F', 'GF=F', 'KE=F', 'CT=F', 'ZR=F'])
    
         # Prompt user to choose time period 
         st.write("Choose the analysis period:\n"
@@ -149,24 +150,28 @@ def step_1():
         # Prompt user to choose number of simulations
         num_of_portfolios = st.slider("Choose number of portfolios simulated:", min_value=500, max_value=5000, step=500)
 
-# # Load Crypto scatter plot 
-# st.write("Scatter plot for crypto:")       
-# st.pyplot()
-
-# # Load Stocks scatter plot 
-# st.write("Scatter plot for stocks:")       
-# st.pyplot()
-
-# # Load Stocks scatter plot 
-# st.write("Scatter plot for commodities:")       
-# st.pyplot()
-
-
-
-# create a function to show the data frame for the selected period
+# Create a function to show the data frame for the selected period
 def show_df(start, end):
     filtered_df = df[start:end]
     return st.dataframe(filtered_df)
+
+# Load Crypto scatter plot 
+def show_crypto_scat_polt():
+    st.write("Scatter plot for crypto:")       
+        st.pyplot()
+
+# Load Stocks scatter plot 
+def show_stocks_scat_polt(): 
+    st.write("Scatter plot for stocks:")       
+    st.pyplot()
+
+# Load commodities scatter plot 
+def show_commodities_scat_polt(): 
+    st.write("Scatter plot for commodities:")       
+    st.pyplot()
+
+
+
 
 
 
@@ -235,7 +240,7 @@ def  step_3():
         st.markdown(
         """
         <div style="text-align:justify;">
-        Ah, the trading Grid bot, a financial whiz that puts the "grid" in "gridlock".
+        Ah, the trading Grid bot, a financial whiz that puts the "grid" in action.
         <br/>
         Let us break it down for you:
         <br/>
