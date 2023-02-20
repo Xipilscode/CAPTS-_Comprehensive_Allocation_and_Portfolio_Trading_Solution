@@ -61,7 +61,8 @@ conda pip install streamlit
 7.Open **capital_allocation_optimization** file in Jupyter notebook.  
 
 
-[The application is deployed as a web page on streamlit:](https://capital-allocation-optimizationstreamlit-front-end-ca-ofp0v6.streamlit.app/)
+[The application is deployed as a web page on streamlit:]
+(https://capital-allocation-optimizationstreamlit-front-end-ca-ofp0v6.streamlit.app/)
 
 Here are the screenshots of the pages:
 
@@ -72,9 +73,9 @@ Capital Allocation Optimization:
 ![Capital Allocation Optimization:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/capital_alloc_shot.png)
 
 
-
+G
 ![GRID Bot for Backtesting and Trading:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/Grid_bot_shot.png)
-
+)
 ---
 
 ## Instructions
