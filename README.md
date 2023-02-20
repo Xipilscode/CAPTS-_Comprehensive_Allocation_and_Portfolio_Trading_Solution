@@ -63,7 +63,7 @@ conda pip install streamlit
 
 [The application is deployed as a web page on streamlit:](https://capital-allocation-optimizationstreamlit-front-end-ca-ofp0v6.streamlit.app/)
 
-Here are the screenshots of the pages:
+Here are screenshots of the web app's pages:
 
 ![Home page:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/images/Home_page_shot.png)
   
@@ -72,7 +72,7 @@ Capital Allocation Optimization:
 ![Capital Allocation Optimization:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/images/capital_alloc_shot.png)
 
 
-
+GRID Bot for Backtesting and Trading:
 ![GRID Bot for Backtesting and Trading:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/images/Grid_bot_shot.png)
 )
 ---
