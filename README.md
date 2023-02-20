@@ -2,9 +2,9 @@
 
 # Project Title
 
-The project is aimed at providing users with a reliable tool to make informed investment decisions across 3 asset classes (crypto, commodities, and stocks). The first step involves collecting and cleaning data from financial APIs, such as Yahoo finance, using Pandas. Once the data is cleaned, Monte Carlo simulation is employed to analyze it and calculate essential metrics, such as returns, volatility, and Sharpe ratio, for each asset class.
+The project is aimed at providing users with a reliable tool to make informed investment decisions across 3 asset classes (crypto, commodities, and stocks). The first step involves collecting and cleaning data from financial API, such as Yahoo finance, using Pandas. Once the data is cleaned, Monte Carlo simulation is employed to analyze it and calculate essential metrics, such as returns, volatility, and Sharpe ratio, for each asset class.
 
-The simulation generates arrays of portfolios for each asset class with asset allocations, which the user can select from. Two optimal portfolios are identified for each asset class: one with the maximum Sharpe ratio, offering higher returns but also higher risk, and the other with minimum volatility, offering greater stability, but lower returns.
+The simulation generates arrays of portfolios for each asset class with asset allocations. After that two optimal portfolios are identified for each asset class: one with the maximum Sharpe ratio, offering higher returns but also higher risk, and the other with minimum volatility, offering greater stability, but lower returns.
 
 After selecting the preferred portfolio, the project runs a second layer of Monte Carlo simulation to determine the asset allocation for each asset class. This enables users to make informed investment decisions based on their risk tolerance and investment goals.
 
