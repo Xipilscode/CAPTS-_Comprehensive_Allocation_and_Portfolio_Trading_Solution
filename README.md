@@ -74,7 +74,7 @@ Capital Allocation Optimization:
 
 
 ![GRID Bot for Backtesting and Trading:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/images/Grid_bot_shot.png)
-)
+
 ---
 
 ## Instructions
