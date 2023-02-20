@@ -61,8 +61,7 @@ conda pip install streamlit
 7.Open **capital_allocation_optimization** file in Jupyter notebook.  
 
 
-[The application is deployed as a web page on streamlit:]
-(https://capital-allocation-optimizationstreamlit-front-end-ca-ofp0v6.streamlit.app/)
+[The application is deployed as a web page on streamlit:](https://capital-allocation-optimizationstreamlit-front-end-ca-ofp0v6.streamlit.app/)
 
 Here are the screenshots of the pages:
 
