@@ -88,9 +88,8 @@ def home():
 
 # Step 1 page
 def step_1():
-    with 
-        st.spinner("Loading capital Allocation page..."):
-         # Header image 
+    with st.spinner("Loading capital Allocation page..."):
+        # Header image 
         img_header = Image.open('Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/main_page_2.jpeg')
         st.image(img_header, width=None)
 
