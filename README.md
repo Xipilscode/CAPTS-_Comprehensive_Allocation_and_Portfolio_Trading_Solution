@@ -42,19 +42,19 @@ conda create --name anaconda
 ```python
 conda pip install jupyterlab
 ```
-3. To install Pandass lybrarie:
+3. To install Pandass:
 ```python
 conda pip install pandas
 ```
-4.  To install yfinance lybrarie:
+4.  To install yfinance:
 ```python
 conda pip install yfinance
 ```
-5.  To install install scipy lybrarie:
+5.  To install install scipy:
 ```python
 cconda install scipy
 ```
-6.  To install install streamlit lybrarie:
+6.  To install install streamlit:
 ```python
 conda pip install streamlit
 ```
@@ -74,7 +74,7 @@ Capital Allocation Optimization:
 
 GRID Bot for Backtesting and Trading:
 ![GRID Bot for Backtesting and Trading:](Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/data/images/images/Grid_bot_shot.png)
-)
+
 ---
 
 ## Instructions
