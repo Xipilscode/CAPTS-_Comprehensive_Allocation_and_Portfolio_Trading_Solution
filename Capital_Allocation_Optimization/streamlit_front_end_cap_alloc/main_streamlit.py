@@ -4,6 +4,7 @@ from PIL import Image
 import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
+#capital_alloc_utils as cau
 
 # create the navigation menu
 def navigation():
@@ -111,10 +112,16 @@ def step_1():
 
 
         # Prompt user to choose assets in asset classes 
-        crypto = st.multiselect("Choose cryptocurencies:", options=['BTC-USD', 'ETH-USD', 'DOGE-USD', 'MATIC-USD', 'AVAX-USD', 'SOL-USD', 'TRX-USD', 'ATOM-USD', 'UNI7083-USD', 'LINK-USD'])
-        stocks = st.multiselect("Choose stocks:", options=['AMZN', 'AAPL', 'TSLA', 'GOOGL', 'NVDA', 'MSFT', 'TSM', 'META','XOM', 'LAC'])
-        comodities = st.multiselect("Choose commodities:", options=['GC=F', 'SI=F', 'CL=F', 'HG=F', 'LBS=F', 'ZS=F', 'GF=F', 'KE=F', 'CT=F', 'ZR=F'])
-   
+        crypto_selected = st.multiselect("Choose cryptocurencies:", options=['BTC-USD', 'ETH-USD', 'DOGE-USD', 'MATIC-USD', 'AVAX-USD', 'SOL-USD', 'TRX-USD', 'ATOM-USD', 'UNI7083-USD', 'LINK-USD'])
+        stocks_selected = st.multiselect("Choose stocks:", options=['AMZN', 'AAPL', 'TSLA', 'GOOGL', 'NVDA', 'MSFT', 'TSM', 'META','XOM', 'LAC'])
+        comodities_selected = st.multiselect("Choose commodities:", options=['GC=F', 'SI=F', 'CL=F', 'HG=F', 'LBS=F', 'ZS=F', 'GF=F', 'KE=F', 'CT=F', 'ZR=F'])
+
+        api_pull = {'crypto':crypto_selected
+                    ,'stock':stocks_selected
+                    ,'commodities':commodities_selected
+                    }
+
+
         # Prompt user to choose time period 
         st.write("Choose the analysis period:\n"
         "Note that you can only choose a period starting from Jan 1st, 2020!")
@@ -145,7 +152,31 @@ def step_1():
         # Display the selected dates
         st.write("Selected start date:", selected_start_date)
         st.write("Selected end date:", selected_end_date)
-       
+        
+        # Call create_price function to get DataFrames for each asset class
+        crypto_price_df, stocks_price_df, commodities_price_df = create_price_df(data, api_pull)
+
+        # Display Data Frames of closing pices por each asset class
+        st.write('First 5 rows of closing prices for crypto assets:')
+        st.dataframe(crypto_price_df.hed(), width=500, height=300)
+
+        st.write('First 5 rows of closing prices for crypto stocks:')
+        st.dataframe(stocks_price_df.head(), width=500, height=300)
+
+        st.write('First 5 rows of closing prices for commodities:')
+        st.dataframe(commodities_price_df.head(), width=500, height=300)
+
+        # Display Data Frames for logarithmic returns of the assets for chosen time period.
+        st.write('First 5 rows of logarithmic returns for crypto assets:')
+        st.dataframe(crypto_log_returns.hed(), width=500, height=300)
+
+        st.write('First 5 rows of logarithmic returns for stocks:')
+        st.dataframe(stocks_log_returns.hed(), width=500, height=300)
+
+        st.write('First 5 rows of logarithmic returns for commodities:')
+        st.dataframe(commodities_log_returns.hed(), width=500, height=300)
+
+
         # Prompt user to choose number of simulations
         num_of_portfolios = st.slider("Choose number of portfolios simulated:", min_value=500, max_value=5000, step=500)
 
@@ -170,7 +201,7 @@ def show_commodities_scat_polt():
     st.pyplot()
 
 
-
+crypto_graph = cau.create_scatter(crypto_simulation_df)
 
 
 
