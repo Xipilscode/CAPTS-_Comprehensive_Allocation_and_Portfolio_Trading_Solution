@@ -8,7 +8,7 @@ import scipy.optimize as sci_plt
 import streamlit as st
 import holoviews as hv
 hv.extension('bokeh')
-%matplotlib inline
+# %matplotlib inline
 
 
 
