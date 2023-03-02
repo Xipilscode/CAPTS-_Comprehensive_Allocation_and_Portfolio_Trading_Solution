@@ -10,8 +10,7 @@ import holoviews as hv
 hv.extension('bokeh')
 %matplotlib inline
 
-import sys
-sys.path.append("utils")
+
 
 # from pprint import pprint
 # from sklearn.preprocessing import StandardScaler
