@@ -10,8 +10,11 @@ import holoviews as hv
 hv.extension('bokeh')
 %matplotlib inline
 
-from pprint import pprint
-from sklearn.preprocessing import StandardScaler
+import sys
+sys.path.append("utils")
+
+# from pprint import pprint
+# from sklearn.preprocessing import StandardScaler
 
 
 # Define trading days constant
