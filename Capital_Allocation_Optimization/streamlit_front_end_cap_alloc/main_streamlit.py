@@ -124,7 +124,7 @@ def step_1():
         # Prompt user to choose assets in asset classes 
         crypto_selected = st.multiselect("Choose cryptocurencies:", options=['BTC-USD', 'ETH-USD', 'DOGE-USD', 'MATIC-USD', 'AVAX-USD', 'SOL-USD', 'TRX-USD', 'ATOM-USD', 'UNI7083-USD', 'LINK-USD'])
         stocks_selected = st.multiselect("Choose stocks:", options=['AMZN', 'AAPL', 'TSLA', 'GOOGL', 'NVDA', 'MSFT', 'TSM', 'META','XOM', 'LAC'])
-        comodities_selected = st.multiselect("Choose commodities:", options=['GC=F', 'SI=F', 'CL=F', 'HG=F', 'LBS=F', 'ZS=F', 'GF=F', 'KE=F', 'CT=F', 'ZR=F'])
+        commodities_selected = st.multiselect("Choose commodities:", options=['GC=F', 'SI=F', 'CL=F', 'HG=F', 'LBS=F', 'ZS=F', 'GF=F', 'KE=F', 'CT=F', 'ZR=F'])
 
         api_pull = {'crypto':crypto_selected
                     ,'stock':stocks_selected
