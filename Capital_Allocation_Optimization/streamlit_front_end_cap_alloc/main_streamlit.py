@@ -4,8 +4,14 @@ from PIL import Image
 import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
-#capital_alloc_utils as cau
-
+from utils.functions import fetch_asset_data
+from utils.functions import create_price_df  
+from utils.functions import calculate_log_returns
+from utils.functions import generate_random_weights
+from utils.functions import rebalance_weights
+from utils.functions import calculate_expected_returns
+from utils.functions import calculate_expected_volatility
+from utils.functions import calculate_sharpe_ratio
 # create the navigation menu
 def navigation():
     page = st.sidebar.selectbox("Choose a page to continue", ["Home", "Step 1: Capital Allocation", "Step 2: Portfolio Optimization", "Step 3 : GRID Bot"])
@@ -152,7 +158,10 @@ def step_1():
         # Display the selected dates
         st.write("Selected start date:", selected_start_date)
         st.write("Selected end date:", selected_end_date)
-        
+
+        # Call fetch_asset_data function to pull data from API
+        data = fetch_asset_data(api_pull, selected_start_date, selected_end_date)   
+
         # Call create_price function to get DataFrames for each asset class
         crypto_price_df, stocks_price_df, commodities_price_df = create_price_df(data, api_pull)
 
@@ -166,63 +175,81 @@ def step_1():
         st.write('First 5 rows of closing prices for commodities:')
         st.dataframe(commodities_price_df.head(), width=500, height=300)
 
+        # Call function to calculate the log returns for each asset class 
+        crypto_log_returns, stocks_log_returns, commodities_log_returns = calculate_log_returns(crypto_price_df, stocks_price_df, commodities_price_df)
+
         # Display Data Frames for logarithmic returns of the assets for chosen time period.
         st.write('First 5 rows of logarithmic returns for crypto assets:')
-        st.dataframe(crypto_log_returns.hed(), width=500, height=300)
+        st.dataframe(crypto_log_returns.head(), width=500, height=300)
 
         st.write('First 5 rows of logarithmic returns for stocks:')
-        st.dataframe(stocks_log_returns.hed(), width=500, height=300)
+        st.dataframe(stocks_log_returns.head(), width=500, height=300)
 
         st.write('First 5 rows of logarithmic returns for commodities:')
-        st.dataframe(commodities_log_returns.hed(), width=500, height=300)
+        st.dataframe(commodities_log_returns.head(), width=500, height=300)
+        
+        # Define the number of tickers selected for each asset class
+        crypto_num_selected_tickers = len(api_pull['crypto'])
+        stocks_num_selected_tickers = len(api_pull['stocks'])
+        commodities_num_selected_tickers = len(api_pull['commodities'])
 
+        # Call function to generate random weights for each asset class
+        crypto_random_wts = generate_random_weights(crypto_num_selected_tickers)
+        stocks_random_wts = generate_random_weights(stocks_num_selected_tickers)
+        commodities_random_wts = generate_random_weights(commodities_num_selected_tickers)
+
+        # Call function to rebalance weights, so each assect class would wave 100% allocation 
+        crypto_rebalanced_wts = rebalance_weights(crypto_random_wts)
+        stocks_rebalanced_wts = rebalance_weights(stocks_random_wts)
+        commodities_rebalanced_wts = rebalance_weights(commodities_random_wts)
+
+        # Call function to calculate expected returns for each asset class and annualize them.
+        # Annualize crypto 365, stock and commodities 252 days
+        crypto_expected_returns = calculate_expected_returns(crypto_log_returns, crypto_rebalanced_wts)
+        stocks_expected_returns = calculate_expected_returns(stocks_log_returns, stocks_rebalanced_wts)
+        commodities_expected_returns = calculate_expected_returns(commodities_log_returns, commodities_rebalanced_wts)
+
+        # Call function to calculate expected volatility for each asset
+        crypto_expected_volatility = calculate_expected_volatility(crypto_log_returns, crypto_rebalanced_wts)
+        stocks_expected_volatility = calculate_expected_volatility(stocks_log_returns, stocks_rebalanced_wts)
+        commodities_expected_volatility = calculate_expected_volatility(commodities_log_returns, commodities_rebalanced_wts)
+
+        # Call function to calculate the Sharpe Ratio for each asset class using the calculate_sharpe_ratio function
+        crypto_sharpe_ratio = calculate_sharpe_ratio(crypto_expected_returns, crypto_expected_volatility)
+        stocks_sharpe_ratio = calculate_sharpe_ratio(stocks_expected_returns, stocks_expected_volatility)
+        commodities_sharpe_ratio = calculate_sharpe_ratio(commodities_expected_returns, commodities_expected_volatility)
 
         # Prompt user to choose number of simulations
         num_of_portfolios = st.slider("Choose number of portfolios simulated:", min_value=500, max_value=5000, step=500)
 
-# Create a function to show the data frame for the selected period
-def show_df(start, end):
-    filtered_df = df[start:end]
-    return st.dataframe(filtered_df)
+        # Call the Monte Carlo simulation function for each asset class.
+        crypto_all_weights, crypto_ret_arr, crypto_vol_arr, crypto_sharpe_ratio_arr = mc_sim(num_of_portfolios, crypto_log_returns, crypto_num_selected_tickers)
+        stocks_all_weights, stocks_ret_arr, stocks_vol_arr, stocks_sharpe_ratio_arr = mc_sim(num_of_portfolios, stocks_log_returns, stocks_num_selected_tickers)
+        commodities_all_weights, commodities_ret_arr, commodities_vol_arr, commodities_sharpe_ratio_arr =  mc_sim(num_of_portfolios, commodities_log_returns, commodities_num_selected_tickers)
 
-# Load Crypto scatter plot 
-def show_crypto_scat_polt():
-    st.write("Scatter plot for crypto:")       
-    st.pyplot()
+        # Create data frame with the weights, the returns, the volatility, and the Sharpe Ratio for each asset class
+        crypto_simulations_data = [crypto_ret_arr, crypto_vol_arr, crypto_sharpe_ratio_arr, crypto_all_weights]
+        stocks_simulations_data = [stocks_ret_arr,  stocks_vol_arr,  stocks_sharpe_ratio_arr,  stocks_all_weights]
+        commodities_simulations_data = [commodities_ret_arr,  commodities_vol_arr,  commodities_sharpe_ratio_arr,  commodities_all_weights]
 
-# Load Stocks scatter plot 
-def show_stocks_scat_polt(): 
-    st.write("Scatter plot for stocks:")       
-    st.pyplot()
+        # Create a DataFrame from sim data and Transpose, so will look like our original one.
+        crypto_simulations_df = pd.DataFrame(data=crypto_simulations_data).T
+        stocks_simulations_df = pd.DataFrame(data=stocks_simulations_data).T
+        commodities_simulations_df = pd.DataFrame(data=commodities_simulations_data).T
 
-# Load commodities scatter plot 
-def show_commodities_scat_polt(): 
-    st.write("Scatter plot for commodities:")       
-    st.pyplot()
+        # Give the columns names for crypto
+        crypto_simulations_df.columns = [
+            'Returns',
+            'Volatility',
+            'Sharpe Ratio',
+            'Portfolio Weights'
+        ]
+        # Make sure the data types are correct, we don't want our floats to be strings.
+        # Infer data types to convert columns with mixed data types to their appropriate data types.
+        crypto_simulations_df = crypto_simulations_df.infer_objects()
 
-
-crypto_graph = cau.create_scatter(crypto_simulation_df)
-
-
-
-# # Load Crypto data frame 
-# st.write("Crypto datat Frame:")       
-# st.dataframe()
-
-# # Load Stocks data frame  
-# st.write("Stocks datat Frame:")       
-# st.dataframe()
-
-# # Load Stocks data frame  
-# st.write("Commodities datat Frame:")       
-# st.dataframe(commodities_df)
-
-
-# # Display scattre plot
-# st.write("Scattre plot for crypto")   
-# st.pyplot()
-
-
+        st.write('First 5 rows of simulated portfolios for crypto asset class:')
+        st.dataframe(crypto_simulations_df.head(), width=500, height=300)
 
 
 
