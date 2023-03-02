@@ -5,7 +5,7 @@ import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 import sys
-sys.path.append("Capital_Allocation_Optimization/streamlit_front_end_cap_alloc/utils/functions.py")
+sys.path.append('utils')
 
 from utils.functions import fetch_asset_data
 from utils.functions import create_price_df  
