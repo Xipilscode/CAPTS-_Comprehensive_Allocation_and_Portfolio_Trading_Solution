@@ -171,7 +171,7 @@ def step_1():
 
         # Display Data Frames of closing pices por each asset class
         st.write('First 5 rows of closing prices for crypto assets:')
-        st.dataframe(crypto_price_df.hed(), width=500, height=300)
+        st.dataframe(crypto_price_df.head(), width=500, height=300)
 
         st.write('First 5 rows of closing prices for crypto stocks:')
         st.dataframe(stocks_price_df.head(), width=500, height=300)
